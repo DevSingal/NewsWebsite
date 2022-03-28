@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+$primary-yellow: rgb(254, 194, 14);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1, h2{
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 8vh;
+  width: 100%;
+  background-color: rgb(14, 14, 14);
+}
+
+.logo {
+  color: $primary-yellow;
+  display: flex;
+  align-items: center;
+  font-size: 1cm;
+  font-family: "Ubuntu", sans-serif;
+  svg {
+    margin: 8px;
+    font-size: 1.2cm;
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .link_icon{
+      width: 1.4cm;
+      cursor: pointer;
+      height: 0.95cm;
+    }
+
+    li {
+      list-style: none;
+      width: 2cm;
+      height: 0.95cm;
+      
+      font-size: 1rem;
+      font-family: 'Ubuntu', sans-serif;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s linear;
+      justify-content: center;
+      :hover{
+        color: rgb(189, 189, 189);
+      }
+
+      svg{
+        font-size: 0.65cm;
+        color: white;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        }
+      }
+    }
+  }
+
+
+  .home{
+    margin: 2cm;
+    width: 65%;
+
+    .firstElm{
+      img{
+        width: 100%;
+      }
+      h1{
+        font-size: 1cm;
+        :hover a{
+          text-decoration: underline;
+        }
+      }
+      p{
+        font-weight: 200;
+        margin: 10px 0px;
+      }
+      a{
+        text-decoration:none;
+         color: black;
+         
+      }
+    }
+
+    .news_MainContainer{
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 1cm 0px;
+
+      .news_ctnr{
+        width: calc((100%/3) - 20px) ;
+        margin: 20px 10px;
+        img{
+          width: 100%;
+        }
+        a{
+          text-decoration: none;
+          color: black;
+          :hover{
+            text-decoration: underline;
+          }
+        }
+        h2{
+          font-family: 'Ubuntu', sans-serif;
+        }
+      }
+    }
+  }

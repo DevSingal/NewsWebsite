@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 8vh;
+  width: 100%;
+  background-color: #0e0e0e;
+}
+
+.logo {
+  color: #fec20e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1cm;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.logo svg {
+  margin: 8px;
+  font-size: 1.2cm;
+}
+
+.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.links ul .link_icon {
+  width: 1.4cm;
+  cursor: pointer;
+  height: 0.95cm;
+}
+
+.links ul li {
+  list-style: none;
+  width: 2cm;
+  height: 0.95cm;
+  font-size: 1rem;
+  font-family: 'Ubuntu', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.links ul li :hover {
+  color: #bdbdbd;
+}
+
+.links ul li svg {
+  font-size: 0.65cm;
+  color: white;
+}
+
+.links ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.home {
+  margin: 2cm;
+  width: 65%;
+}
+
+.home .firstElm img {
+  width: 100%;
+}
+
+.home .firstElm h1 {
+  font-size: 1cm;
+}
+
+.home .firstElm h1 :hover a {
+  text-decoration: underline;
+}
+
+.home .firstElm p {
+  font-weight: 200;
+  margin: 10px 0px;
+}
+
+.home .firstElm a {
+  text-decoration: none;
+  color: black;
+}
+
+.home .news_MainContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  margin: 1cm 0px;
+}
+
+.home .news_MainContainer .news_ctnr {
+  width: calc((100%/3) - 20px);
+  margin: 20px 10px;
+}
+
+.home .news_MainContainer .news_ctnr img {
+  width: 100%;
+}
+
+.home .news_MainContainer .news_ctnr a {
+  text-decoration: none;
+  color: black;
+}
+
+.home .news_MainContainer .news_ctnr a :hover {
+  text-decoration: underline;
+}
+
+.home .news_MainContainer .news_ctnr h2 {
+  font-family: 'Ubuntu', sans-serif;
+}
+/*# sourceMappingURL=master.css.map */
