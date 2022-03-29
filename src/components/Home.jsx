@@ -1,57 +1,111 @@
 import React, { Fragment } from "react";
-import axios from "axios";
-import { useQuery } from "react-query";
 import Loader from "./Loader";
-
-const apiKey = process.env.REACT_APP_API_KEY;
-
-let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`;
-
-const fetchData = () => {
-  return axios.get(`${url}`);
-};
+import AsideNewsComp from "./AsideNewsComp";
+import useFetchData from "../hooks/useFetchData";
 
 const Home = () => {
-  const { data, isLoading, isError, error } = useQuery("news-data", fetchData, {
-    cacheTime: 10 * 60 * 1000, // cache time is 10 minutes
-    refetchInterval: 10 * 60 * 1000, // refetches data in every 10 minute
-  });
+  const {
+    data: mainData,
+    isError: mainIsError,
+    isLoading: mainIsLoading,
+    error: mainError,
+  } = useFetchData("general", "in", 1, "mainNews");
 
-  if (isLoading) {
+  if (mainIsLoading) {
     return <Loader />;
   }
 
-  if (isError) {
-    return <h1>{error.message}</h1>; // error is the error that occured while data fetching whereas isError is the state of the data that some error ocurred
+  if (mainIsError) {
+    return console.log(mainError.message); // error is the error that occured while data fetching whereas isError is the state of the data that some error ocurred
   }
 
-  const fetchedData = data.data;
+  const fetchedData = mainData.data;
 
-  let dataOfFirstElem = fetchedData.articles[0];
+  const dataOfFirstElem = fetchedData.articles[0];
 
   return (
     <Fragment>
-      <section className="home">
-        <div className="firstElm">
-          <img src={dataOfFirstElem.urlToImage} alt="" />
-          <a href={dataOfFirstElem.url}><h1>{dataOfFirstElem.title}</h1></a>
-          <p>{dataOfFirstElem.description}</p>
-          <p>By {dataOfFirstElem.author}</p>
-        </div>
-        <div className="news_MainContainer">
-          {fetchedData.articles.map((val, index) => {
-            return (
-              <div key={index} className="news_ctnr">
-                <img className="news_img" src={val.urlToImage} alt="" />
-                <a href={val.url}>
-                  <h2 className="news_heading">{val.title}</h2>
-                </a>
-                <p className="news_description">{val.description}</p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <section className="home">
+          <div className="firstElm">
+            <img src={dataOfFirstElem.urlToImage} alt="" />
+            <a target="_blank" href={dataOfFirstElem.url}>
+              <h1>{dataOfFirstElem.title}</h1>
+            </a>
+            <p className="news_description">{dataOfFirstElem.description}</p>
+            <p className="news_author">
+              By{" "}
+              {dataOfFirstElem.author ? dataOfFirstElem.author : "Dev Singal"}
+            </p>
+          </div>
+          <div className="news_MainContainer">
+            {fetchedData.articles.map((val, index) => {
+              if (index === 0) {
+                return "";
+              }
+
+              let date = new Date(val.publishedAt);
+              console.log(date);
+              let month;
+              switch (date.getMonth()) {
+                case 0:
+                  month = "January";
+                  break;
+                case 1:
+                  month = "February";
+                  break;
+                case 2:
+                  month = "March";
+                  break;
+                case 3:
+                  month = "April";
+                  break;
+                case 4:
+                  month = "May";
+                  break;
+                case 5:
+                  month = "June";
+                  break;
+                case 6:
+                  month = "July";
+                  break;
+                case 7:
+                  month = "August";
+                  break;
+                case 8:
+                  month = "September";
+                  break;
+                case 9:
+                  month = "October";
+                  break;
+                case 10:
+                  month = "November";
+                  break;
+                case 11:
+                  month = "December";
+                  break;
+              }
+              let stringDate = `${month} ${date.getDate()}, ${date.getFullYear()}`;
+              return (
+                <div key={index} className="news_ctnr">
+                  <img className="news_img" src={val.urlToImage} alt="" />
+                  <a target="_blank" href={val.url}>
+                    <h2 className="news_heading">{val.title}</h2>
+                  </a>
+                  <p className="news_description">{val.description}</p>
+                  <div className="semantic_div">
+                    <p className="news_author">
+                      By {val.author ? val.author : "Dev Singal"}
+                    </p>
+                    <span>{stringDate}</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+        <AsideNewsComp />
+      </div>
     </Fragment>
   );
 };
