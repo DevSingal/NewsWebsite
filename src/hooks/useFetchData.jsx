@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 
-const apiKey = process.env.REACT_APP_API_KEY;
+const apiKey = "836e7351771f487aa95adcbd68539f6d";
 
 const useFetchData = (category = "general", country = "in", page = 1, type, pageSize = 5) => {
   const fetchData = () => {

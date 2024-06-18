@@ -38,6 +38,7 @@ const Home = () => {
               {dataOfFirstElem.author ? dataOfFirstElem.author : "Dev Singal"}
             </p>
           </div>
+          
           <div className="news_MainContainer">
             {fetchedData.articles.map((val, index) => {
               if (index === 0) {
@@ -86,13 +87,15 @@ const Home = () => {
                   break;
               }
               let stringDate = `${month} ${date.getDate()}, ${date.getFullYear()}`;
+
+              let dummyPara = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eum aperiam illum. Id adipisci, eaque tenetur ipsa ipsum incidunt esse doloremque ea fugiat maiores hic in cumque fuga ad vitae."
               return (
                 <div key={index} className="news_ctnr">
                   <img className="news_img" src={val.urlToImage} alt="" />
                   <a target="_blank" href={val.url}>
                     <h2 className="news_heading">{val.title}</h2>
                   </a>
-                  <p className="news_description">{val.description}</p>
+                  <p className="news_description">{val.description ? val.description : dummyPara}</p>
                   <div className="semantic_div">
                     <p className="news_author">
                       By {val.author ? val.author : "Dev Singal"}

@@ -25,15 +25,31 @@ const NavigationBar = () => {
         <div className="links">
           <ul>
             <li>
-              <Link to="/">HOME</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">ABOUT</Link>
+              <Link to="/business">Business</Link>
             </li>
-            <li className="link_icon">
-              <button style={btnStyle}>
-                <FaBars />
-              </button>
+            <li>
+              <Link to="/entertainment">Entertainment</Link>
+            </li>
+            <li>
+              <Link to="/health">Health</Link>
+            </li>
+            <li>
+              <Link to="/science">Science</Link>
+            </li>
+            <li>
+              <Link to="/sports">Sports</Link>
+            </li>
+            <li>
+              <Link to="/technology">Technology</Link>
+            </li>
+            <li>
+              <Link to="/international">International</Link>
+            </li>
+            <li>
+              <Link to="/national">National</Link>
             </li>
           </ul>
         </div>

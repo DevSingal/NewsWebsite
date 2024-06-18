@@ -2,8 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
@@ -23,27 +22,18 @@ h4 {
 }
 
 nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  height: 8vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 16vh;
   width: 100%;
-  background-color: #0e0e0e;
+  background-color: #001F3F;
 }
 
 .semantic_div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding: 0mm 2mm;
 }
 
@@ -60,53 +50,36 @@ nav {
 }
 
 .logo {
-  color: #fec20e;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  color: rgb(134, 255, 248);
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   font-size: 1cm;
   font-family: "Ubuntu", sans-serif;
 }
-
 .logo svg {
   margin: 8px;
   font-size: 1.2cm;
 }
 
 .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
 }
-
 .links ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 65%;
 }
-
 .links ul .link_icon {
   width: 1.4cm;
   height: 0.95cm;
 }
-
 .links ul .link_icon svg {
   cursor: pointer;
 }
-
 .links ul li {
   list-style: none;
   width: 2cm;
@@ -114,28 +87,18 @@ nav {
   font-weight: 700;
   font-size: 1rem;
   font-family: "Ubuntu", sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: color 0.3s linear;
+  align-items: center;
   transition: color 0.3s linear;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .links ul li :hover {
-  color: #bdbdbd;
+  color: rgb(189, 189, 189);
 }
-
 .links ul li svg {
   font-size: 0.65cm;
   color: white;
 }
-
 .links ul li a {
   color: white;
   text-decoration: none;
@@ -145,54 +108,41 @@ nav {
   margin: 2cm;
   width: 60%;
 }
-
 .home .firstElm img {
   width: 100%;
 }
-
 .home .firstElm a h1 {
   font-size: 1cm;
 }
-
 .home .firstElm a h1:hover {
-  -webkit-text-decoration: underline 4px #fec20e;
-          text-decoration: underline 4px #fec20e;
+  -webkit-text-decoration: underline 4px rgb(254, 194, 14);
+          text-decoration: underline 4px rgb(254, 194, 14);
 }
-
 .home .firstElm a {
   text-decoration: none;
   color: black;
 }
-
 .home .news_MainContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 100%;
   margin: 1cm 0px;
 }
-
 .home .news_MainContainer .news_ctnr {
-  width: calc((100% / 2) - 20px);
+  width: calc(50% - 20px);
   margin: 7mm 2mm;
 }
-
 .home .news_MainContainer .news_ctnr img {
   width: 100%;
   aspect-ratio: 2/1;
 }
-
 .home .news_MainContainer .news_ctnr a {
   text-decoration: none;
   color: black;
 }
-
 .home .news_MainContainer .news_ctnr a :hover {
   text-decoration: underline;
 }
-
 .home .news_MainContainer .news_ctnr h2 {
   font-family: "Ubuntu", sans-serif;
   font-size: 8mm;
@@ -205,7 +155,6 @@ nav {
   background-color: gray;
   height: 100%;
   padding: 1cm;
-  -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
 
@@ -218,30 +167,22 @@ nav {
   top: 13cm;
   height: auto;
 }
-
 .sideNewsComp h2 {
   margin-bottom: 1mm;
 }
-
 .sideNewsComp .sideNewsDiv a {
   color: black;
 }
-
 .sideNewsComp .sideNewsDiv a h3 {
   font-size: 6mm;
   text-decoration: underline;
-  -webkit-text-decoration-color: #fec20e;
-          text-decoration-color: #fec20e;
+  text-decoration-color: rgb(254, 194, 14);
   text-decoration-thickness: 2.8px;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-
 .sideNewsComp .sideNewsDiv a h3:hover {
   text-decoration-thickness: 4px;
 }
-
 .sideNewsComp .sideNewsDiv h4 {
   margin: 5px 0px;
-}
-/*# sourceMappingURL=master.css.map */
+}/*# sourceMappingURL=master.css.map */
